@@ -289,7 +289,7 @@ header{
         }
 
         input[type=checkbox]:checked~#loader {
-            top: -100vh;
+            /*top: -100vh;*/
         }
         input[type=checkbox]:checked~#loader svg rect {
             display: none;
