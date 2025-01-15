@@ -11,7 +11,24 @@
     <link rel="shortcut icon" href="Assets/" type="image/x-icon">
 </head>
 <body>
-    <div class="heroSection">
+    <input type="checkbox" name="checkbox" id="checkbox">
+    <div id="loader"><label for="checkbox">
+            <div class="loader-anim">
+                <svg width="300" height="100" viewBox="0 0 300 100" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Rectangle -->
+                    <rect x="10" y="10" width="280" height="80" rx="15" ry="15" fill="none" stroke="#f5f5f5"
+                        stroke-width="2" />
+                    <!-- Name -->
+                    <text x="50%" y="50%" fill="#f5f5f5" font-size="20" font-family="researcher, sans-serif"
+                        text-anchor="middle" alignment-baseline="middle">
+                        Jonathan Spectre
+                    </text>
+                </svg>
+            </div>
+        </label>
+    </div>
+   <div id="pageContent">
+    <div class="heroSection toHide">
         <header class="header">
             <div class="logo-container">
               <h3>Jonathan Specter</h3>
@@ -90,7 +107,7 @@
             </div>
         </div>
     </div>
-    <div class="middle">
+    <div class="middle toHide">
         <div class="workHistory">
             <div class="unit">
                 <h2>A co-founder at one of the world's largest communities.</h2>
@@ -110,14 +127,14 @@
             </div>
         </div>
     </div>
-    <div class="heroSection">
+    <div class="heroSection toHide">
         <div class="intro soc">
             <h1>Interested in working with me?</h1>
             <p>I'm active on all social media platforms listed below, but you can also send me an emai and I will get back to you within 24-48 hours.</p>
             <div class="btn"><button><div class="fill">Get In Touch</div>Get In Touch</button></div>
         </div>
     </div>
-    <footer class="middle">
+    <footer class="middle toHide">
         <div class="logo-container">
             <h3>Jonathan Specter</h3>
         </div>
@@ -133,5 +150,25 @@
             </div>
         </div>
     </footer>
+   </div>
+    <script>
+   window.addEventListener('load', () => {
+    setTimeout(() => {
+        const loader = document.getElementById('loader');
+        const pageContent = document.getElementById('pageContent');
+
+        if (loader) {
+            setTimeout(() => {
+                loader.style.width = '0';
+
+                if (pageContent) {
+                    pageContent.style.display = 'block';
+                }
+            }, 1000); 
+        }
+    }, 4000);
+});
+
+    </script>
 </body>
 </html>
